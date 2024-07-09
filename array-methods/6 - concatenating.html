@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Example 4
+        const places = [
+            {
+                title: "Awesome Suite 20' away from la Rambla",
+                price: 200,
+                type: 'Private Room',
+                pool: true,
+                garage: false
+            },
+            {
+                title: 'Private apartment',
+                price: 190,
+                type: 'Entire Place',
+                pool: false,
+                garage: true
+            },
+            {
+                title: 'Apartment with awesome views',
+                price: 400,
+                type: 'Entire Place',
+                pool: false,
+                garage: false
+            }
+        ]
+
+
+        const sumPoolPrices =
+            places
+                .filter(eachPlace => eachPlace.pool)                                // primero filtro - solo quedaría uno
+                .reduce((acc, eachPlace) => acc + eachPlace.price, 0)               // después reduzco lo filtrado
+
+
+        console.log('El sumatorio de precios de sitios con piscina es', sumPoolPrices)
+
+    </script>
+</body>
+
+</html>
